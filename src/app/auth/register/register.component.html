@@ -1,0 +1,119 @@
+<div>
+  <img src="./assets/logo-only.png" alt="Hello" class="img">
+  <mat-card class="example-card">
+    <form [formGroup]="formModel" autocomplete="off" (submit)="onSubmit()">
+      <mat-card-header>
+        <mat-icon mat-card-avatar>person_add</mat-icon>
+        <mat-card-title>Learner Registration</mat-card-title>
+        <mat-card-subtitle>Please fill in the following input fields</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <div class="row">
+          <div class="col">
+
+            <mat-form-field appearance="outline">
+              <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Name</mat-label>
+              <input matInput placeholder="ex. 'Tristan'" formControlName="FirstName" required>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+              <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Surname</mat-label>
+              <input matInput placeholder="ex. 'Ogle'" formControlName="Surname" required>
+            </mat-form-field>
+
+            <div>
+              <mat-form-field appearance="fill" class="m-2">
+                <mat-label>Are you ?</mat-label>
+                <mat-select (onSelectionChange)="get($event)" formControlName="isAtSchool" required>
+                  <mat-option *ngFor="let item of companies" (click)="get(item)" [value]="item.value">
+                    {{item.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <span *ngIf="isSelected">
+                <span *ngIf="Yes">
+                  <mat-form-field appearance="fill">
+                    <mat-label>School Name</mat-label>
+                    <input matInput placeholder="" formControlName="SchoolName" required>
+                    <mat-icon matSuffix>school</mat-icon>
+                    <mat-hint>Enter the name of your School</mat-hint>
+                  </mat-form-field>
+                </span>
+              </span>
+            </div>
+
+          </div>
+          <div class="col">
+
+            <mat-form-field appearance="outline">
+              <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Username</mat-label>
+              <input matInput placeholder="ex. 'user1234'" formControlName="Email">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="m-2">
+              <mat-label>Student Type</mat-label>
+              <mat-select formControlName="UserTypeId">
+                <mat-option *ngFor="let item of userTypes" [value]="item.UserTypeId">
+                  {{item.UserTypeDesc}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div formGroupName="Passwords">
+              <mat-form-field appearance="outline">
+                <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Password</mat-label>
+                <input matInput type="password" placeholder="ex. 'Tristan'" formControlName="Password" required>
+                <label class="text-danger"
+                  *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.required">Field
+                  is mandatory.</label>
+                <label class="text-danger"
+                  *ngIf="formModel.get('Passwords.Password').touched && formModel.get('Passwords.Password').errors?.minlength">Minimum
+                  4 characters.</label>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label class="col-form-label col-form-label-sm mt-2" for="inputSmall">Confirm Password</mat-label>
+                <input matInput type="password" placeholder="Confirm  Password" formControlName="ConfirmPassword"
+                  required>
+                <label class="text-danger"
+                  *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.required">Field
+                  is mandatory.</label>
+                <label class="text-danger"
+                  *ngIf="formModel.get('Passwords.ConfirmPassword').touched && formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm
+                  Password does not match</label>
+
+              </mat-form-field>
+
+            </div>
+            <div class="row">
+              <mat-label class="col-form-label col-form-label-sm mt-2"> Inspire_Academy_parental_agreement template pdf
+              </mat-label> <br>
+              <a class="btn" type="button" href="src/assets/Inspire_Academy_parental_agreement.pdf" download><img
+                  src="https://img.icons8.com/color/48/000000/export-pdf.png" /></a>
+
+              <mat-label class="col-form-label col-form-label-sm mt-2" for="myfile">Upload parent/gaurdian agreement
+              </mat-label>
+              <input type="file" id="FileInput" class="form-control-file" #Docs (change)="handleFileInput($event)"
+                multiple="multiple">
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button mat-stroked-button type="submit">Create</button>
+
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+
+</div>

@@ -1,0 +1,47 @@
+<div>
+  <img src="./assets/logo-only.png" alt="Hello" class="img">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-icon mat-card-avatar>person_add</mat-icon>
+    <mat-card-title>Course Registration</mat-card-title>
+    <mat-card-subtitle>Please fill in the following input fields</mat-card-subtitle>
+  </mat-card-header>
+  <form [formGroup]="registerModel" autocomplete="off" (submit)="onSubmit()">
+  <mat-card-content>
+    <div class="row">
+
+      <div class="col">
+       <mat-form-field>
+           <mat-label>Select course</mat-label>
+           <mat-select formControlName="CourseId">
+               <mat-option>None</mat-option>
+               <mat-option *ngFor="let course of courses"  [value]="course.CourseId">
+                   {{course.CourseDesc}}
+               </mat-option>
+           </mat-select>
+       </mat-form-field>
+      </div>
+
+      <div class="col">
+        <mat-form-field>
+            <mat-label>Select a Centre</mat-label>
+            <mat-select formControlName="CentreId">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let centre of centres"  [value]="centre.CentreId">
+                    {{centre.CentreName}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+       </div>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button mat-stroked-button>Register</button>
+      <button mat-raised-button  color="warn" routerLink="/dashboard" >Cancel</button>
+    </div>
+  </mat-card-actions>
+  </form>
+</mat-card>
+</div>

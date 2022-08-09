@@ -1,0 +1,26 @@
+
+<h3 mat-dialog-title align="center">Deregister Course</h3>
+<div mat-dialog-content></div>
+
+<form class="example-form" [formGroup]="formDeregister" autocomplete="off" (submit)="onSubmit()">
+
+<div mat-dialog-content>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Course</mat-label>
+            <input matInput placeholder="Grade 11 Maths" formControlName="Course" readonly >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Reason for deregistration</mat-label>
+            <textarea matInput  placeholder="a valid reason"  formControlName="Comments" ></textarea>
+
+        </mat-form-field>
+
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-stroked-button type="submit">Confirm</button>
+    <button mat-raised-button (click)="Close()" color="warn">Cancel</button>
+</div>
+
+</form>
