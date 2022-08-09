@@ -1,248 +1,255 @@
-# [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
+**What is Entity Framework?**
 
-![Product Gif](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/material-dashboard-angular.gif)
+Writing and managing ADO.Net code for data access is a tedious and monotonous job. Microsoft has provided an O/RM framework called "Entity Framework" to automate database related activities for your application.
 
-**[Material Dashboard Angular](https://www.creative-tim.com/product/material-dashboard-angular2/)** is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard was built over the popular Bootstrap framework and it comes with a couple of third-party plugins redesigned to fit in with the rest of the elements.
+Microsoft has given the following definition of Entity Framework:
 
-Material Dashboard makes use of light, surface and movement. The general layout resembles sheets of paper following multiple different layers, so that the depth and order is obvious. The navigation stays mainly on the left sidebar and the content is on the right inside the main panel.
+*The Microsoft ADO.NET Entity Framework is an Object/Relational Mapping (ORM) framework that enables developers to work with relational data as domain-specific objects, eliminating the need for most of the data access plumbing code that developers usually need to write. Using the Entity Framework, developers issue queries using LINQ, then retrieve and manipulate data as strongly typed objects. The Entity Framework's ORM implementation provides services like change tracking, identity resolution, lazy loading, and query translation so that developers can focus on their application-specific business logic rather than the data access fundamentals.*
 
-This product came as a result of users asking for a material dashboard after we released our successful [Material Kit](http://www.creative-tim.com/product/material-kit). We developed it based on your feedback and it is a powerful bootstrap admin dashboard, which allows you to build products like admin panels, content managements systems and CRMs.
+Entity framework is an Object/Relational Mapping (O/RM) framework. It is an enhancement to ADO.NET that gives developers an automated mechanism for accessing & storing the data in the database.
 
-Material Dashboard comes with 5 color filter choices for both the sidebar and the card headers (blue, green, orange, red and purple) and an option to have a background image on the sidebar.
+Entity framework is useful in three scenarios. First, if you already have existing database or you want to design your database ahead of other parts of the application. Second, you want to focus on your domain classes and then create the database from your domain classes. Third, you want to design your database schema on the visual designer and then create the database and classes.
 
-Material Dashboard uses a framework built by our friend [Federico - Bootstrap Material Design](http://fezvrasta.github.io/bootstrap-material-design/), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
+The following figure illustrates the above scenarios.
 
-Special thanks go to:
-[Robert McIntosh](https://github.com/mouse0270/bootstrap-notify) for the notification system.
-[Chartist](https://gionkunz.github.io/chartist-js/) for the wonderful charts.
-We are very excited to share this dashboard with you and we look forward to hearing your feedback!
+![Entity Framework overview](media/834775ad5e482b04f40b52fb7efdf887.png)
 
-You can find the Github Repo here.
+As per the above figure, EF creates data access classes for your existing database, so that you can use these classes to interact with the database instead of ADO.Net directly.
 
-## Table of Contents
+EF can also create the database from your domain classes, thus you can focus on your domain-driven design.
 
-* [Versions](#versions)
-* [Demo](#demo)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
+EF provides you a model designer where you can design your DB model and then EF creates database and classes based on your DB model.
 
+**What is O/RM?**
 
-## Versions
+ORM is a tool for storing data from domain objects to relational database like MS SQL Server, in an automated way, without much programming. O/RM includes three main parts: Domain class objects, Relational database objects and Mapping information on how domain objects map to relational database objects (tables, views & storedprocedures). ORM allows us to keep our database design separate from our domain class design. This makes the application maintainable and extendable. It also automates standard CRUD operation (Create, Read, Update & Delete) so that the developer doesn't need to write it manually.
 
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard)
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/angular-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-angular2)
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/vue-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-dashboard)
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react)
+A typical ORM tool generates classes for the database interaction for your application as shown below.
 
-| HTML | Angular | Vue | React |
-| --- | --- | --- | --- |
-| [![Material Dashboard HTML](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-html/material-dashboard.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard) | [![Material Dashboard Angular](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-angular/material-dashboard-angular.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard-angular2) | [![Vue Material Dashboard ](https://github.com/creativetimofficial/public-assets/blob/master/vue-material-dashboard/vue-material-dashboard.jpg?raw=true)](https://www.creative-tim.com/product/vue-material-dashboard) | [![Material Dashboard React](https://github.com/creativetimofficial/public-assets/blob/master/material-dashboard-react/material-dashboard-react.jpg?raw=true)](https://www.creative-tim.com/product/material-dashboard-react)
+![Entity Framework overview](media/3dd91922b088a7861c5b56e0239e8432.png)
 
-## Demo
+Visit wikipedia for more information on [Object-relational Mapping](http://en.wikipedia.org/wiki/Object-relational_mapping)
 
-| Dashboard | User Profile | Tables | Icons | Notifications |
-| --- | --- | --- | --- | --- |
-| [![Start page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/dashboard.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard) | [![User profile page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/user-profile.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/user-profile) | [![Tables page ](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/tables.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/table-list) | [![Icons Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/icons.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/maps) | [![Notifications page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-dashboard-angular/notifications.png?raw=true)](https://demos.creative-tim.com/material-dashboard-angular2/#/notifications)
+There are many ORM frameworks for .net in the market such as DataObjects.Net, NHibernate, OpenAccess, SubSonic etc. Entity Framework is an open source ORM framework from Microsoft.
 
-[View More](https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard).
+Please note that **Entity Framework is an open source framework** by Microsoft. You can contribute to the Entity Framework project on [codeplex](https://entityframework.codeplex.com/).
 
-## Quick start
+**Entity Relationships:**
 
-Quick start options:
+Here, you will learn how entity framework manages the relationships between entities.
 
-- [Download from Github](https://github.com/tiniestory/material-dashboard-angular2/archive/master.zip).
-- [Download from Creative Tim](http://www.creative-tim.com/product/material-dashboard-angular2).
+Entity framework supports three types of relationships, same as database: 1) One to One 2) One to Many, and 3) Many to Many.
 
-## Terminal Commands
+We have created an Entity Data Model for the SchoolDB database in the [Create Entity Data Model](http://www.entityframeworktutorial.net/EntityFramework5/create-dbcontext-in-entity-framework5.aspx) section. The following figure shows the visual designer for that EDM with all the entities and relationships among them.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0 and angular 4.x.
+![Entity relationships in entity framework](media/9c7599b539d899ce5f71005a505edda7.png)
 
-1. Install NodeJs from [NodeJs Official Page](https://nodejs.org/en).
-2. Open Terminal
-3. Go to your file project
-4. Make sure you have installed [Angular CLI](https://github.com/angular/angular-cli) already. If not, please install.
-5. Run in terminal: ```npm install```
-6. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## One-to-One Relationship:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+As you can see in the above figure, Student and StudentAddress have a One-to-One relationship (zero or one). A student can have only one or zero address. Entity framework adds Student navigation property into StudentAddress entity and StudentAddress navigation entity into Student entity. Also, StudentAddress entity has StudentId property as PrimaryKey which makes it a One-to-One relationship.
 
-### What's included
+As you can see in the above code, Student entity class includes StudentAddress navigation property and StudentAddress includes Student navigation property with foreign key property StudentId. This way EF handles one-to-one relationship between entities.
 
-Within the download you'll find the following directories and files:
+## One-to-Many Relationship:
 
-```
-material-dashboard-angular
-├── CHANGELOG.md
-├── LICENSE.md
-├── README.md
-├── angular-cli.json
-├── documentation
-├── e2e
-├── karma.conf.js
-├── package-lock.json
-├── package.json
-├── protractor.conf.js
-├── src
-│   ├── app
-│   │   ├── app.component.css
-│   │   ├── app.component.html
-│   │   ├── app.component.spec.ts
-│   │   ├── app.component.ts
-│   │   ├── app.module.ts
-│   │   ├── app.routing.ts
-│   │   ├── components
-│   │   │   ├── components.module.ts
-│   │   │   ├── footer
-│   │   │   │   ├── footer.component.css
-│   │   │   │   ├── footer.component.html
-│   │   │   │   ├── footer.component.spec.ts
-│   │   │   │   └── footer.component.ts
-│   │   │   ├── navbar
-│   │   │   │   ├── navbar.component.css
-│   │   │   │   ├── navbar.component.html
-│   │   │   │   ├── navbar.component.spec.ts
-│   │   │   │   └── navbar.component.ts
-│   │   │   └── sidebar
-│   │   │       ├── sidebar.component.css
-│   │   │       ├── sidebar.component.html
-│   │   │       ├── sidebar.component.spec.ts
-│   │   │       └── sidebar.component.ts
-│   │   ├── dashboard
-│   │   │   ├── dashboard.component.css
-│   │   │   ├── dashboard.component.html
-│   │   │   ├── dashboard.component.spec.ts
-│   │   │   └── dashboard.component.ts
-│   │   ├── icons
-│   │   │   ├── icons.component.css
-│   │   │   ├── icons.component.html
-│   │   │   ├── icons.component.spec.ts
-│   │   │   └── icons.component.ts
-│   │   ├── layouts
-│   │   │   └── admin-layout
-│   │   │       ├── admin-layout.component.html
-│   │   │       ├── admin-layout.component.scss
-│   │   │       ├── admin-layout.component.spec.ts
-│   │   │       ├── admin-layout.component.ts
-│   │   │       ├── admin-layout.module.ts
-│   │   │       └── admin-layout.routing.ts
-│   │   ├── maps
-│   │   │   ├── maps.component.css
-│   │   │   ├── maps.component.html
-│   │   │   ├── maps.component.spec.ts
-│   │   │   └── maps.component.ts
-│   │   ├── notifications
-│   │   │   ├── notifications.component.css
-│   │   │   ├── notifications.component.html
-│   │   │   ├── notifications.component.spec.ts
-│   │   │   └── notifications.component.ts
-│   │   ├── table-list
-│   │   │   ├── table-list.component.css
-│   │   │   ├── table-list.component.html
-│   │   │   ├── table-list.component.spec.ts
-│   │   │   └── table-list.component.ts
-│   │   ├── typography
-│   │   │   ├── typography.component.css
-│   │   │   ├── typography.component.html
-│   │   │   ├── typography.component.spec.ts
-│   │   │   └── typography.component.ts
-│   │   ├── upgrade
-│   │   │   ├── upgrade.component.css
-│   │   │   ├── upgrade.component.html
-│   │   │   ├── upgrade.component.spec.ts
-│   │   │   └── upgrade.component.ts
-│   │   └── user-profile
-│   │       ├── user-profile.component.css
-│   │       ├── user-profile.component.html
-│   │       ├── user-profile.component.spec.ts
-│   │       └── user-profile.component.ts
-│   ├── assets
-│   │   ├── css
-│   │   │   └── demo.css
-│   │   ├── img
-│   │   └── scss
-│   │       ├── core
-│   │       └── material-dashboard.scss
-│   ├── environments
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── main.ts
-│   ├── polyfills.ts
-│   ├── styles.css
-│   ├── test.ts
-│   ├── tsconfig.app.json
-│   ├── tsconfig.spec.json
-│   └── typings.d.ts
-├── tsconfig.json
-├── tslint.json
-└── typings
+The Standard and Teacher entities have a One-to-Many relationship marked by multiplicity where 1 is for One and \* is for many. This means that Standard can have many Teachers whereas Teacher can associate with only one Standard.
 
-```
+To represent this, The Standard entity has the collection navigation property **Teachers** (please notice that it's plural), which indicates that one Standard can have a collection of Teachers (many teachers). And Teacher entity has a Standard navigation property (Not a Collection) which indicates that Teacher is associated with one Standard. Also, it contains StandardId foreign key (StandardId is a PK in Standard entity). This makes it One-to-Many relationship.
 
-## Browser Support
+As you can see in the above code snippet, Standard entity class has Teachers property of type ICollection, so that it can contain multiple Teacher objects. (It initializes Teachers property with HashSet\<Teacher\> in the constructor, so that you can add Teacher objects into collection without worrying about initializing it.)
 
-At present, we officially aim to support the last two versions of the following browsers:
+Also, Teacher entity class includes Standard property with StandardId for foreign key property. Entity framework includes this foreign key property because we checked **Include foreign key columns in the model** in the EDM wizard while creating EDM in the [Create Entity Data Model](http://www.entityframeworktutorial.net/EntityFramework5/create-dbcontext-in-entity-framework5.aspx) section.
 
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
+## Many-to-Many Relationship:
 
+Student and Course have Many-to-Many relationships marked by \* multiplicity. It means one Student can enrol for many Courses and also, one Course can be be taught to many Students.
 
+The database design includes StudentCourse joining table which includes the primary key of both the tables (Student and Course table). Entity Framework represents many-to-many relationships by not having entityset for the joining table in CSDL, instead it manages this through mapping.
 
-## Resources
-- Demo: <https://demos.creative-tim.com/material-dashboard-angular2/#/dashboard>
-- Download Page: <https://www.creative-tim.com/product/material-dashboard-angular2>
-- Documentation: <https://demos.creative-tim.com/material-dashboard-angular2/#/documentation/tutorial>
-- License Agreement: <https://www.creative-tim.com/license>
-- Support: <https://www.creative-tim.com/contact-us>
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/material-dashboard-angular2/issues)
-- [Material Kit](https://www.creative-tim.com/product/material-kit?ref=github-mda-free) - For Front End Development
+As you can see in the above figure, Student entity includes Courses property and Course entity includes Students property to represent many-to-many relationship between them.
 
-## Reporting Issues
+**Note:** Entity framework supports many-to-many relationship only when the joining table (StudentCourse in this case) does **NOT** include any columns other than PKs of both the tables. If the join tables contain additional columns, such as DateCreated, then the EDM creates entity for middle table as well and you will have to manage CRUD operation for many-to-many entities manually.
 
-We use GitHub Issues as the official bug tracker for the Material Dashboard. Here are some advices for our users that want to report an issue:
+# Entity Lifecycle:
 
-1. Make sure that you are using the latest version of the Material Dashboard. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
+Before we work on CRUD operation (Create, Read, Update, Delete), it's important to understand the entity lifecycle and how it is being managed by the EntityFramework.
 
+During an entity's lifetime, each entity has an entity state based on the operation performed on it via the context (DbContext). The entity state is an enum of type *System.Data.Entity.EntityState* that includes the following values:
 
-## Technical Support or Questions
+1.  Added
+2.  Deleted
+3.  Modified
+4.  Unchanged
+5.  Detached
 
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
+The Context not only holds the reference to all the objects retrieved from the database but also it holds the entity states and maintains modifications made to the properties of the entity. This feature is known as *Change Tracking*.
 
+The change in entity state from the Unchanged to the Modified state is the only state that's automatically handled by the context. All other changes must be made explicitly using proper methods of DbContext and DbSet.
 
+The following figure illustrates how the operation performed on entity changes its' states which, in turn, affects database operation.
 
-## Licensing
+![entity states in Entity](media/c2e6cc43cadab21dc29bb9695c8e5933.png)
 
-- Copyright 2018 Creative Tim (https://www.creative-tim.com/)
+As you can see in the above figure, new entity in context has Added entity state. So the context will execute insert command to the database. In the same way, when you retrieve an existing entity using L2E queries, it will have Unchanged state, this is because you have just retrieved an entity and hasn't performed any operation on it yet. When you modify values of existing entity, it changes its state to Modified which in turn will execute update command on SaveChanges. Deleted entity from context will have Deleted state which in turn will execute delete command to the database.
 
-- Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-angular2/blob/master/LICENSE.md)
+So, in this way, operations performed on entities changes states. Context builds and executes database commands based on the state of an entity.
 
+**Code First development with Entity Framework:**
 
-## Useful Links
+Entity Framework supports three different development approaches to use entity framework in your application.
 
-- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
+1.  Code First
+2.  Model First
+3.  Database first
 
-##### Social Media
+**Code First:** In the Code First approach, you avoid working with visual model designer (EDMX) completely. You write your POCO classes first and then create database from these POCO classes.
 
-Twitter: <https://twitter.com/CreativeTim>
+Developers who follow the path of Domain-Driven Design (DDD) principles, prefer to begin by coding their domain classes first and then generating the database required to persist their data.
 
-Facebook: <https://www.facebook.com/CreativeTim>
+![code-first in entity framework](media/a00c9269d217bada02989a32f91aaa21.png)
 
-Dribbble: <https://dribbble.com/creativetim>
+# Model First development with Entity Framework:
 
-Google+: <https://plus.google.com/+CreativetimPage>
+**Model First:** In the Model First approach, you create Entities, relationships, and inheritance hierarchies directly on the design surface of EDMX and then generate database from your model.
 
-Instagram: <https://www.instagram.com/CreativeTimOfficial>
+# Database First development with Entity Framework:
 
-[CHANGELOG]: ./CHANGELOG.md
+We have seen this approach in [Create Entity Data Model](http://www.entityframeworktutorial.net/EntityFramework5/create-dbcontext-in-entity-framework5.aspx) where we created the EDM, context and entity classes from an existing database. So, when you generate EDMX from an existing database then it is a Database First approach.
 
-[version-badge]: https://img.shields.io/badge/version-2.6.0-blue.svg
+![Entity Framework database first](media/4bafa0062d61b4b2aad85332b4c8df2f.png)
+
+Entity Data Model can be updated whenever database schema changes. Also, database-first approach supports stored procedure, view, etc.
+
+# Choose development approach with Entity Framework:
+
+We have seen Code-first, Model-first and Database-first approaches in the previous sections. So, now you have to make a decision about which development approach to use in your application. The following figure illustrates the decision tree.
+
+# Querying with EDM:
+
+We have created EDM, DbContext, and entity classes in the previous sections. Here, you will learn the different types of queries an entity framework supports, which is in turn converted into SQL query for the underlaying database.
+
+Entity framework supports three types of queries: 1) LINQ to Entities, 2) Entity SQL, and 3) Native SQL
+
+**1) LINQ to Entities:** Language-Integrated Query (LINQ) is a powerful query language introduced in Visual Studio 2008. You can use LINQ in C\# or Visual Basic to query different data sources. LINQ-to-Entities operates on entity framework entities to access the data from the underlying database. You can use LINQ method syntax or query syntax when querying with EDM. Visit [LINQ Tutorials](http://www.tutorialsteacher.com/linq/linq-tutorials) to learn LINQ step-by-step.
+
+### LINQ Method syntax:
+
+//Querying with LINQ to Entities
+
+using (var context = new SchoolDBEntities())
+
+{
+
+var L2EQuery = context.Students.where(s =\> s.StudentName == "Bill");
+
+var student = L2EQuery.FirstOrDefault\<Student\>();
+
+}
+
+### LINQ Query syntax:
+
+using (var context = new SchoolDBEntities())
+
+{
+
+var L2EQuery = from st in context.Students
+
+where st.StudentName == "Bill"
+
+select st;
+
+var student = L2EQuery.FirstOrDefault\<Student\>();
+
+}
+
+First, you have to create an object of context class, which is SchoolDBEntities. You should initialize it in using() so that once it goes out of scope then it will automatically call Dispose() method of DbContext. In both the syntaxes above, context returns IQueryable.
+
+Learn different types of LINQ to Entities projection query in the [Projection Query](http://www.entityframeworktutorial.net/querying-entity-graph-in-entity-framework.aspx) section.
+
+**2) Entity SQL:** Entity SQL is another way to create a query. It is processed by the Entity Framework’s Object Services directly. It returns ObjectQuery instead of IQueryable.
+
+You need ObjectContext to create a query using Entity SQL.
+
+The following code snippet shows the same query result as L2E query above.
+
+//Querying with Object Services and Entity SQL
+
+string sqlString = "SELECT VALUE st FROM SchoolDBEntities.Students " +
+
+"AS st WHERE st.StudentName == 'Bill'";
+
+var objctx = (ctx as IObjectContextAdapter).ObjectContext;
+
+ObjectQuery\<Student\> student = objctx.CreateQuery\<Student\>(sqlString);
+
+Student newStudent = student.First\<Student\>();
+
+You can also use EntityConnection and EntityCommand to execute Entity SQL as shown below:
+
+using (var con = new EntityConnection("name=SchoolDBEntities"))
+
+{
+
+con.Open();
+
+EntityCommand cmd = con.CreateCommand();
+
+cmd.CommandText = "SELECT VALUE st FROM SchoolDBEntities.Students as st where st.StudentName='Bill'";
+
+Dictionary\<int, string\> dict = new Dictionary\<int, string\>();
+
+using (EntityDataReader rdr = cmd.ExecuteReader(CommandBehavior.SequentialAccess \| CommandBehavior.CloseConnection))
+
+{
+
+while (rdr.Read())
+
+{
+
+int a = rdr.GetInt32(0);
+
+var b = rdr.GetString(1);
+
+dict.Add(a, b);
+
+}
+
+}
+
+}
+
+EntityDataReader doesn't return ObjectQuery. Instead, it returns the data in rows & columns.
+
+Visit [MSDN blog](http://blogs.msdn.com/b/adonet/archive/2007/05/30/entitysql.aspx) to learn Entity SQL.
+
+**3) Native SQL:** You can execute native SQL queries for a relational database as shown below:
+
+using (var ctx = new SchoolDBEntities())
+
+{
+
+var studentName = ctx.Students.SqlQuery("Select studentid, studentname, standardId from Student where studentname='Bill'").FirstOrDefault\<Student\>();
+
+}
+
+# Persistence in Entity Framework
+
+There are two scenarios when persisting an entity using EntityFramework, connected and disconnected scenarios.
+
+**Connected Scenario:** This is when an entity is retrieved from the database and persist is used in the same context. Context object doesn't destroy between entity retrieval and persistence of entities.
+
+![Entity Framework tutorial 4.3 dbcontext](media/eaff85c54dfe65134df776d854c114d2.png)
+
+**Disconnected Scenario:** Disconnected scenario is when an entity is retrieved from the database and the changed entities are submitted using the different objects in the context. The following example illustrates disconnected scenario:
+
+![Entity Framework tutorial 4.3 dbcontext](media/3d38633ee69653accc0606c697227bb4.png)
+
+As per the above scenario, Context1 is used for read operation and then Context1 is destroyed. Once entities change, the application submits entities using Context2 - a different context object.
+
+Disconnected scenario is complex because the new context doesn't know anything about the modified entity so you will have to instruct the context of what has changed in the entity. In the figure below, the application retrieves an entity graph using Context 1 and then the application performs some CUD (Create, Update, Delete) operations on it and finally, it saves the entity graph using Context 2. Context 2 doesn't know what operation has been performed on the entity graph in this scenario.
+
+Learn how to do the CRUD operation in the connected scenario in the next section.
+
+![Choose Entity Framework modling](media/6523671579834af0e125b8214f61815d.png)
+
+As per the above figure, if you already have an existing application with domain classes, then you can use the code-first approach because you can create a database from your existing classes in this approach. If you have an existing database, then you can create an EDM from an existing database in the database-first approach. If you do not have an existing database or domain classes, and you prefer to design your DB model on the visual designer, then go for Model-first approach.
